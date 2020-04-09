@@ -1,6 +1,6 @@
 Machine-Learning
 
-1) Neural Network(Deep-Learning Model) :
+1)Neural Network(Deep-Learning Model) :
 Dataset used is the famous Fashion-MNIST from Keras.
 A sequential model API is used in this model.
 Three different sub-models/neural networks are built which differentiate in their number of neurons/units and hidden layers to get better accuracy.
