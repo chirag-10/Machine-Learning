@@ -43,10 +43,7 @@ class iris:
     def training(self):   
         models = []
         models.append(('LR', LogisticRegression(solver='liblinear', multi_class='ovr')))
-        #models.append(('LDA', LinearDiscriminantAnalysis()))
         models.append(('KNN', KNeighborsClassifier()))
-        #models.append(('CART', DecisionTreeClassifier()))
-        #models.append(('NB', GaussianNB()))
         models.append(('SVM', SVC(gamma='auto')))  
         max=999
         self.results=[]
@@ -77,21 +74,12 @@ class iris:
         print(accuracy_score(self.yval, predictions))
         print(confusion_matrix(self.yval, predictions))
         print(classification_report(self.yval, predictions))   
-        
-    def saveData(self,model):
-        filename = 'iris_pickled_data.pkl'
-        joblib.dump(model,filename)
 
-    def loadData(self):
-        model_loaded = joblib.load('iris_pickled_data.pkl')
-        predict(model_loaded)
 
+print("*****Comparing different ML Algorithms like SVM,Logistic regression,etc*****")
 obj = iris()
-#obj.visualization()
 obj.sets()
 model = obj.training()
-
 obj.comparealgo()
 obj.predict(model)
-obj.saveData(model)
-obj.loadData()
+
